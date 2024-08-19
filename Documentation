@@ -1,0 +1,28 @@
+/project-root
+│
+├── /api
+│   └── /exercices
+│       ├── lireTout.php          # Fetches all exercises
+│       ├── ajouterUn.php         # Adds a new exercise
+│       ├── supprimerUn.php       # Deletes an exercise
+│       └── lireUn.php            # Fetches details of a single exercise
+│
+├── /assets
+│   ├── /css                      # Contains CSS files for styling
+│   ├── /font                     # Contains font files
+│   ├── /img                      # Contains images
+│   └── /js
+│       ├── /classes
+│       │   ├── App.js            # Initializes and manages the application
+│       │   ├── Exercice.js       # Manages exercise data (fetch, delete, etc.)
+│       │   ├── Formulaire.js     # Manages form validation and submission
+│       │   └── Router.js         # Manages client-side routing
+│       ├── /components
+│       │   └── ToastModale.js    # Displays toast notifications for feedback
+│       └── /pages
+│           └── index.js          # Renders the main page and exercise details
+│
+├── /data
+│   └── exercices.sql             # SQL file for setting up the database with initial data
+│
+└── index.html                    # The main HTML file that loads the application
