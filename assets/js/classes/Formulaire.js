@@ -29,7 +29,7 @@ class FormulaireExercice {
             const message = await reponse.json();
             console.log(message);
             //Rediriger vers la liste après
-            history.pushState({}, "", "#afficher");
+            history.pushState({}, "", "afficher");
             this.app.router.miseAJourURL();
         }
     }

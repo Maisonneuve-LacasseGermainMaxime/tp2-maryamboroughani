@@ -2,9 +2,9 @@ class Router {
     constructor(app) {
         this.app = app;
         this.routes = {
-            liste: app.afficherListeExercices.bind(this.app),
-            ajouter: app.afficherFormulaireAjouter.bind(this.app),
-            detail: app.afficherDetailExercice.bind(this.app),
+            liste: app.afficherListe.bind(app),
+            ajouter: app.afficherFormulaire.bind(app),
+            detail: app.afficherDetail.bind(app),
         };
 
         window.addEventListener("popstate", this.miseAJourURL.bind(this));
@@ -14,10 +14,10 @@ class Router {
     }
 
     miseAJourURL() {
-        const url = window.location.pathname.slice(1); // Remove the leading '/'
-        const parts = url.split("/"); // Split the URL into parts
-        let route = parts[0]; // The first part of the URL is the route
-        let id = parts[1]; // The second part (if exists) is the id
+        const url = window.location.pathname.slice(1); 
+        const parts = url.split("/");
+        let route = parts[0]; 
+        let id = parts[1]; 
 
         const fonctionRoute = this.routes[route];
         if (id) {
@@ -42,4 +42,3 @@ class Router {
 }
 
 export default Router;
-
