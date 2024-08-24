@@ -4,8 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-        <link rel="stylesheet" href="/assets/css/styles.css" />
-        <script type="module" src="/assets/js/pages/index.js"></script>
+        <link rel="stylesheet" href="assets/css/styles.css" />
+        <script type="module" src="assets/js/pages/index.js"></script>
         <title>Training App</title>
     </head>
 
@@ -22,8 +22,8 @@
         <header>
             <h1>Suivi d'exercices</h1>
             <nav>
-                <a href="/liste" data-lien>Afficher les exercices</a>
-                <a href="/ajouter" data-lien>Ajouter un nouvel exercice</a>
+                <a href="#afficher">Afficher les exercices</a>
+                <a href="#ajouter">Ajouter un nouvel exercice</a>
             </nav>
         </header>
         <main data-app>
@@ -33,7 +33,7 @@
                     <div class="exercice">
                         <h2 data-exercice-date>{{date}}</h2>
                         <p data-exercice-type>{{type}}</p>
-                        <a href="/detail/{{id}}" class="btn">Détail</a>
+                        <a href="#detail/{{id}}" class="btn">Détail</a>
                     </div>
                 </template>
                 <div data-liste-exercices></div>
@@ -47,7 +47,7 @@
                     <p>Date: <span data-date>{{ date }}</span></p>
                     <p>Description: <span data-description>{{ description }}</span></p>
                     <p>Difficulté: <span data-difficulte>{{ difficulte }}</span></p>
-                    <a href="/afficher" style="margin-right: 10px">Retour à la liste</a>
+                    <a href="/#afficher" style="margin-right: 10px">Retour à la liste</a>
                     <button class="btn danger">Supprimer l'exercice</button>
                 </div>
             </section>
@@ -75,7 +75,13 @@
                         <textarea name="description" id="description" required></textarea>
                     </div>
 
-                    <input class="disabled" type="submit" name="submit" id="submit" value="envoyer" required />
+                    <div class="input-group">
+                        <label for="difficulte">Difficulté</label>
+                        <input type="number" min="1" max="5" name="difficulte" id="difficulte" required />
+                    </div>
+                    
+
+                    <input  type="submit" name="submit" id="submit" value="envoyer" required />
                 </form>
             </section>
         </main>
